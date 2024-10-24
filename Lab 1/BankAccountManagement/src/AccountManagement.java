@@ -4,13 +4,22 @@ public class AccountManagement {
     public static void main(String[] args) {
         
         Scanner keyboard = new Scanner(System.in);
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        System.out.println("--------------------");
+        System.out.println("\tBANK");
+        System.out.println("--------------------");
         System.out.println("Tạo tài khoản mới");
+        System.out.print("Enter username: ");
         String strName = keyboard.nextLine();
+        System.out.println("--------------------");
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         BankAccount account = new BankAccount(strName, 5000000, 1.0);
 
         while (true) {
             System.out.println("--------------------");
-            System.out.println("\t\tBANK");
+            System.out.println("\tBANK");
             System.out.println("--------------------");
             System.out.println("1. Gửi tiền");
             System.out.println("2. Rút tiền");
@@ -43,6 +52,8 @@ public class AccountManagement {
                     continue;
                 case 0:
                     keyboard.close();
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
                     return;
                 default:
                     System.out.println("Chức năng không hợp lệ");
